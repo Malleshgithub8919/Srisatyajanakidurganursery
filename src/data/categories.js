@@ -1,0 +1,17 @@
+export const categories = [
+  { id: 'indoor', name: 'Indoor Plants', description: 'Plants for homes and offices' },
+  { id: 'outdoor', name: 'Outdoor Plants', description: 'Plants for gardens and open spaces' },
+  { id: 'flowering', name: 'Flowering Plants', description: 'Seasonal and perennial flowers' },
+  { id: 'fruit', name: 'Fruit Plants', description: 'Fruit-bearing plants and saplings' },
+  { id: 'avenue', name: 'Avenue Plants', description: 'Shade trees and avenue varieties' },
+  { id: 'palms', name: 'Palm Plants', description: 'Decorative and landscape palms' },
+  { id: 'ornamental', name: 'Ornamental Plants', description: 'Foliage and decorative varieties' },
+  { id: 'medicinal', name: 'Medicinal Plants', description: 'Herbal and traditional plants' },
+  { id: 'vegetable', name: 'Vegetable Plants', description: 'Vegetable seedlings' },
+  { id: 'bonsai', name: 'Bonsai Plants', description: 'Miniature decorative trees' },
+  { id: 'cactus', name: 'Cactus & Succulents', description: 'Low-water ornamental plants' },
+  { id: 'bamboo', name: 'Bamboo Plants', description: 'Clumping and ornamental bamboo' },
+  { id: 'climbers', name: 'Creepers & Climbers', description: 'Climbing and trailing plants' },
+  { id: 'lawn', name: 'Lawn & Grass', description: 'Grass and ground cover for lawns' },
+  { id: 'exotic', name: 'Exotic Plants', description: 'Distinctive plants from around the world' },
+]

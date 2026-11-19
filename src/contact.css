@@ -1,0 +1,5 @@
+.contact-content{display:grid;grid-template-columns:1fr 1.2fr;gap:22px;max-width:1080px;margin:0 auto;align-items:stretch}
+.map-panel{padding:28px;background:#f3f6ef;border-radius:10px}
+.map-panel h2{margin-top:0;font:600 24px 'Playfair Display',serif;color:#214b35}
+.map-panel iframe{display:block;width:100%;height:330px;border:0;border-radius:8px;margin-bottom:16px}
+@media(max-width:750px){.contact-content{grid-template-columns:1fr}.map-panel{padding:22px 16px}.map-panel iframe{height:280px}}

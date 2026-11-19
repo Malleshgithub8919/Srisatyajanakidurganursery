@@ -1,0 +1,51 @@
+.gardening-page{padding-top:56px}
+.gardening-hero{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;margin-bottom:64px}
+.gardening-hero-copy{max-width:560px}
+.gardening-hero-copy h1{font:600 clamp(42px,5vw,62px)/1.08 'Playfair Display',serif;color:#214b35;margin:12px 0}
+.gardening-hero-copy h2{font:600 23px 'Playfair Display',serif;color:#62825f;margin:0 0 14px}
+.gardening-hero-copy>p:not(.eyebrow){max-width:540px;color:#68776c;line-height:1.8;font-size:15px;margin-bottom:22px}
+.gardening-hero-image{width:100%;height:380px;object-fit:cover;border-radius:14px;box-shadow:0 18px 40px #20362a18}
+.gardening-section{margin:0 auto 68px}
+.gardening-section .section-heading{margin-bottom:24px}
+.gardening-section .section-heading h2{font:600 34px 'Playfair Display',serif;color:#214b35;margin:8px 0}
+.gardening-section .section-heading>div>p:last-child{font-size:13px;color:#718075;line-height:1.7}
+.gardening-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.gardening-category-card,.gardening-tip-card{background:#fff;border:1px solid #e7eee4;border-radius:11px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.gardening-category-card:hover,.gardening-tip-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px #23442b13}
+.gardening-category-card>img{display:block;width:100%;height:190px;object-fit:cover;background:#edf2eb}
+.gardening-card-content{padding:18px;display:flex;flex-direction:column;height:calc(100% - 190px)}
+.gardening-card-content h3,.gardening-tip-card h3{font:600 19px 'Playfair Display',serif;color:#214b35;margin:0 0 8px}
+.gardening-card-content>p,.gardening-tip-card p{color:#718075;font-size:12px;line-height:1.7;margin:0 0 14px}
+.gardening-card-content details{margin-top:auto;border-top:1px solid #edf0eb;padding-top:12px}
+.gardening-card-content summary{display:flex;align-items:center;gap:7px;list-style:none;color:#2c6845;font-size:12px;font-weight:700;cursor:pointer}
+.gardening-card-content summary::-webkit-details-marker{display:none}
+.gardening-card-content details[open] summary{margin-bottom:10px}
+.gardening-card-content details>p{margin:0;color:#657568;font-size:12px;line-height:1.7}
+.gardening-care-section{padding:34px;background:#f3f6ef;border-radius:14px}
+.care-guide-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.care-guide-card{background:#fff;border:1px solid #e5ece2;border-radius:9px;padding:19px}
+.care-guide-number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:#e6f0e5;color:#2d6845;font-size:11px;font-weight:700}
+.care-guide-card h3{font:600 17px 'Playfair Display',serif;color:#214b35;margin:14px 0 7px}
+.care-guide-card p{margin:0;color:#718075;font-size:12px;line-height:1.7}
+.gardening-tips-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.gardening-tip-card>img{display:block;width:100%;height:180px;object-fit:cover;background:#edf2eb}
+.gardening-tip-card>div{padding:17px}
+.gardening-tip-card p{margin-bottom:0}
+.gardening-gallery-section{padding:34px;background:#fbfcf8;border-radius:14px}
+.gardening-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.gardening-gallery-grid figure{height:235px;margin:0;border-radius:9px;overflow:hidden;background:#edf2eb}
+.gardening-gallery-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.gardening-gallery-grid figure:hover img{transform:scale(1.04)}
+.gardening-enquiry{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;padding:36px;background:#285d3d;color:#fff;border-radius:14px}
+.gardening-enquiry-copy h2{font:600 clamp(27px,3vw,36px)/1.2 'Playfair Display',serif;margin:10px 0}
+.gardening-enquiry-copy>p:not(.eyebrow){font-size:13px;line-height:1.75;color:#dce9dc}
+.gardening-contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.gardening-contact-actions .button{font-size:12px;padding:11px 13px}
+.gardening-enquiry-form{padding:22px;background:#fffdf8;border-radius:10px;color:#20362a}
+.gardening-enquiry-form label{display:block;margin-bottom:9px;font-size:13px;font-weight:700;color:#344b3a}
+.gardening-enquiry-form textarea{display:block;width:100%;resize:vertical;min-height:120px;padding:12px;border:1px solid #d6e1d3;border-radius:6px;background:#fff;color:#20362a;font:13px 'DM Sans',sans-serif;line-height:1.6}
+.gardening-enquiry-form textarea:focus-visible{outline:3px solid #c1d9a9;outline-offset:2px}
+.gardening-enquiry-form button{margin-top:13px;width:100%;font-size:12px;padding:12px}
+@media(max-width:1000px){.gardening-category-grid,.care-guide-grid,.gardening-tips-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gardening-enquiry{gap:22px;padding:28px}}
+@media(max-width:650px){.gardening-page{padding-top:42px}.gardening-hero{grid-template-columns:1fr;gap:22px;margin-bottom:48px}.gardening-hero-image{height:270px;grid-row:1}.gardening-hero-copy h1{font-size:46px}.gardening-section{margin-bottom:48px}.gardening-section .section-heading h2{font-size:30px}.gardening-care-section,.gardening-gallery-section{padding:22px 16px}.gardening-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gardening-gallery-grid figure{height:170px}.gardening-enquiry{grid-template-columns:1fr;padding:24px 18px}.gardening-contact-actions{flex-direction:column}.gardening-contact-actions .button{width:100%}}
+@media(max-width:420px){.gardening-category-grid,.care-guide-grid,.gardening-tips-grid{grid-template-columns:1fr}.gardening-category-card>img,.gardening-tip-card>img{height:210px}.gardening-gallery-grid figure{height:145px}}

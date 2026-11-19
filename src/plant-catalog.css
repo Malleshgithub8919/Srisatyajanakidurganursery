@@ -1,0 +1,26 @@
+.plants-page .page-title>p:last-child{font-size:15px}
+.plants-page .catalog-tools{max-width:780px;margin:0 auto 20px}
+.plants-page .search-box{min-height:48px}
+.category-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:0 auto 30px}
+.category-filters button{border:1px solid #dfe8dc;background:#fff;border-radius:22px;padding:9px 15px;color:#49624e;font-size:12px;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.category-filters button:hover,.category-filters button.active{background:#285d3d;border-color:#285d3d;color:#fff}
+.category-filters button:focus-visible,.plant-card-actions a:focus-visible,.plant-card-actions input:focus-visible{outline:3px solid #c1d9a9;outline-offset:2px}
+.plants-page .plant-grid{align-items:stretch}
+.plant-card{display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
+.plant-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #23442b15}
+.plant-card .plant-image{height:220px;flex-shrink:0;overflow:hidden}
+.plant-card .plant-image img{transition:transform .25s ease}
+.plant-card:hover .plant-image img{transform:scale(1.035)}
+.plant-card-body{display:flex;flex:1;flex-direction:column}
+.plant-card-body h3{margin:0 0 5px}
+.plant-telugu{margin:0;color:#63836b;font-size:13px;font-weight:600}
+.plant-scientific{margin:5px 0 0;font-style:italic}
+.plant-description{min-height:42px;margin:12px 0;color:#66766a;font-size:12px;line-height:1.6}
+.plant-meta{display:grid;gap:7px;border-top:1px solid #edf0eb;padding-top:12px;color:#526455;font-size:11px}
+.plant-meta span:first-child{font-weight:700;color:#285d3d}
+.plant-card-actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}
+.plant-card-actions label{display:flex;align-items:center;gap:7px;font-size:12px;color:#53675a}
+.plant-card-actions input{width:62px;padding:8px;border:1px solid #dce5d9;border-radius:5px;color:#20362a}
+.plant-card-actions .button{padding:10px 12px}
+@media(max-width:650px){.category-filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 10px;margin-bottom:20px;scrollbar-width:thin}.category-filters button{flex:0 0 auto}.plant-card .plant-image{height:170px}.plant-card-actions{align-items:flex-start;flex-direction:column}.plant-card-actions .button{width:100%}.plant-description{min-height:0}}
+@media(max-width:390px){.plant-card .plant-image{height:210px}.plant-card-actions{align-items:center;flex-direction:row}.plant-card-actions .button{width:auto}}

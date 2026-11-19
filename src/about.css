@@ -1,0 +1,20 @@
+.about-page .about-tagline{font:600 19px 'Playfair Display',serif;color:#2c6845}
+.about-intro{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1100px;margin:0 auto 55px}
+.about-copy h2,.about-values h2,.about-reasons h2,.about-visit h2{font:600 29px 'Playfair Display',serif;color:#214b35;margin:0 0 14px}
+.about-copy p,.about-values p,.about-visit p{font-size:14px;line-height:1.85;color:#657568}
+.about-photos{position:relative;min-height:410px}
+.about-photos img{object-fit:cover;border-radius:12px;box-shadow:0 14px 34px #20362a20}
+.about-photo-main{width:85%;height:360px}
+.about-photo-detail{position:absolute;width:52%;height:205px;object-fit:cover;right:0;bottom:0;border:8px solid #fffdf8}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1100px;margin:0 auto 45px}
+.about-values article{padding:27px;background:#f3f6ef;border-radius:10px}
+.about-reasons{max-width:1100px;margin:0 auto 45px}
+.about-reasons ul{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;list-style:none;padding:0}
+.about-reasons li{padding:18px 20px;background:#fff;border:1px solid #e7eee4;border-radius:8px;font-size:13px;color:#53675a}
+.about-reasons li::before{content:'✓';color:#2c6845;font-weight:700;margin-right:9px}
+.about-visit{max-width:1100px;margin:0 auto;padding:30px;background:#f3f6ef;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.about-visit .eyebrow{margin-top:0}
+.about-visit .hero-buttons{margin:0}
+.about-closing{text-align:center;margin:38px 0 0;font:600 22px 'Playfair Display',serif;color:#2c6845}
+@media(max-width:750px){.about-intro{grid-template-columns:1fr;gap:22px}.about-photos{min-height:330px}.about-photo-main{height:300px}.about-photo-detail{height:160px}.about-values{grid-template-columns:1fr}.about-reasons ul{grid-template-columns:1fr 1fr}.about-visit{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.about-photos{min-height:275px}.about-photo-main{width:91%;height:250px}.about-photo-detail{width:58%;height:135px}.about-reasons ul{grid-template-columns:1fr}.about-visit{padding:24px 18px}.about-visit .hero-buttons{width:100%}.about-visit .button{width:100%}}
