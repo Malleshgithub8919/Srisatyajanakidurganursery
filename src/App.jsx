@@ -12,4 +12,15 @@ import BlogDetails from './pages/BlogDetails'
 import Reviews from './pages/Reviews'
 import { About, Gallery, Contact } from './pages/InfoPages'
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton'
-export default function App(){return <><Header/><Routes><Route path="/" element={<Home/>}/><Route path="/plants" element={<Plants/>}/><Route path="/plants/:id" element={<PlantDetails/>}/><Route path="/order" element={<OrderForm/>}/><Route path="/about" element={<About/>}/><Route path="/gardening" element={<Gardening/>}/><Route path="/gallery" element={<Gallery/>}/><Route path="/faqs" element={<FAQs/>}/><Route path="/blog" element={<Blog/>}/><Route path="/blog/:slug" element={<BlogDetails/>}/><Route path="/reviews" element={<Reviews/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<main className="page-wrap"><h1>Page not found</h1></main>}/></Routes><FloatingWhatsAppButton/><Footer/></>}
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [pathname])
+  return null
+}
+
+export default function App(){return <><ScrollToTop/><Header/><Routes><Route path="/" element={<Home/>}/><Route path="/plants" element={<Plants/>}/><Route path="/plants/:id" element={<PlantDetails/>}/><Route path="/order" element={<OrderForm/>}/><Route path="/about" element={<About/>}/><Route path="/gardening" element={<Gardening/>}/><Route path="/gallery" element={<Gallery/>}/><Route path="/faqs" element={<FAQs/>}/><Route path="/blog" element={<Blog/>}/><Route path="/blog/:slug" element={<BlogDetails/>}/><Route path="/reviews" element={<Reviews/>}/><Route path="/contact" element={<Contact/>}/><Route path="*" element={<main className="page-wrap"><h1>Page not found</h1></main>}/></Routes><FloatingWhatsAppButton/><Footer/></>}
