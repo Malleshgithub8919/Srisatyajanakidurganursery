@@ -13,7 +13,7 @@ This is a React + Vite starter project for the nursery website.
 4. Run:
 
    ```bash
-   npm install
+   npm ci
    npm run dev
    ```
 
@@ -26,6 +26,13 @@ This is a React + Vite starter project for the nursery website.
 5. Add actual nursery photographs and ensure you have permission to use every image.
 6. Verify WhatsApp links on a real phone.
 7. Run `npm run build` and fix any errors before deployment.
+
+## Deploy to Vercel
+- Import the repository root (the folder containing `package.json`).
+- Use the Vite framework preset, `npm ci` for installation, `npm run build` for the build, and `dist` as the output directory.
+- Select Node.js 22.x in the Vercel project settings.
+- `vercel.json` configures the same build settings and routes client-side React Router URLs to the SPA entrypoint.
+- If npm reports an unknown `cache-dir` environment setting, remove `npm_config_cache_dir` from the Vercel environment variables. npm's supported setting is `npm_config_cache`.
 
 ## Current project scope
 - Responsive React website scaffold
