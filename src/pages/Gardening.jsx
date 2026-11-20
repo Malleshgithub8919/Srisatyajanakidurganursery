@@ -22,7 +22,7 @@ export default function Gardening() {
         <p>Explore gardening ideas, plant care tips and landscaping inspiration to make your home, office and outdoor spaces greener and more beautiful.</p>
         <a className="button" href="#gardening-categories">Explore Gardening Ideas <ArrowRight size={17}/></a>
       </div>
-      <img className="gardening-hero-image" src="/gardening/nursery-landscape.png" alt="Green nursery garden with shaped shrubs and potted plants"/>
+      <img className="gardening-hero-image" src="/gardening/gardening-banner-user.png" alt="Flowering plants arranged in rows at the nursery"/>
     </section>
 
     <section className="gardening-section" id="gardening-categories">

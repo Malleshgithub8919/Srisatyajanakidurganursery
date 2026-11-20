@@ -1,10 +1,7 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, Phone, X } from 'lucide-react'
-import { business } from '../config/business'
+import { Menu, X } from 'lucide-react'
 import { navigationLinks } from '../data/navigation'
-import { buildWhatsAppSupportUrl, getCallUrl } from '../services/whatsappService'
-import WhatsAppIcon from './WhatsAppIcon'
 import Brand from './Brand'
 
 export default function Header() {
@@ -25,9 +22,5 @@ export default function Header() {
     <nav id="site-navigation" className={`site-nav${isMenuOpen ? ' is-open' : ''}`} aria-label="Main navigation">
       {navigationLinks.map(([to, label]) => <NavLink key={to} to={to} end={to === '/'} onClick={() => setIsMenuOpen(false)}>{label}</NavLink>)}
     </nav>
-    <div className="header-actions">
-      <a className="button button-small contact-icon-button" href={getCallUrl()} aria-label={`Call ${business.name}`} title="Call nursery"><Phone size={18}/></a>
-      <a className="button button-small contact-icon-button" href={buildWhatsAppSupportUrl()} target="_blank" rel="noreferrer" aria-label={`Message ${business.name} on WhatsApp`} title="WhatsApp"><WhatsAppIcon size={18}/></a>
-    </div>
   </header>
 }

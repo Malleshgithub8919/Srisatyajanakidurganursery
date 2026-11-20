@@ -17,7 +17,7 @@ function ReviewCard({ review }) {
   </article>
 }
 
-export default function Reviews() {
+export default function Reviews({ embedded = false }) {
   const [name, setName] = useState('')
   const [rating, setRating] = useState('')
   const [message, setMessage] = useState('')
@@ -58,11 +58,15 @@ export default function Reviews() {
     setSuccessMessage('Thank you. Your review is shown only as a temporary preview during this visit; it is not saved or published.')
   }
 
-  return <main className="page-wrap reviews-page">
+  const Wrapper = embedded ? 'section' : 'main'
+  const Title = embedded ? 'h2' : 'h1'
+  const Subtitle = embedded ? 'h3' : 'h2'
+
+  return <Wrapper className={`reviews-page${embedded ? ' contact-reviews' : ' page-wrap'}`} aria-label={embedded ? 'Customer reviews' : undefined}>
     <header className="page-title">
       <p className="eyebrow">CUSTOMER FEEDBACK</p>
-      <h1>Customer Reviews</h1>
-      <h2 className="reviews-subtitle">What Our Customers Say About Us</h2>
+      <Title>Customer Reviews</Title>
+      <Subtitle className="reviews-subtitle">What Our Customers Say About Us</Subtitle>
       <p>Read customer feedback and share your experience with our nursery.</p>
     </header>
 
@@ -143,5 +147,5 @@ export default function Reviews() {
         </form>
       </section>
     </div>
-  </main>
+  </Wrapper>
 }

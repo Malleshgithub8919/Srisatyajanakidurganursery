@@ -27,8 +27,8 @@ export default function OrderForm() {
     window.location.assign(buildWhatsAppOrderFormUrl(form))
   }
 
-  return <main className="page-wrap">
-    <div className="page-title"><p className="eyebrow">ORDER FROM OUR NURSERY</p><h1>Place an Order</h1><p>Share what you need and we’ll open WhatsApp with your order details. The nursery will confirm availability, price and delivery.</p></div>
+  return <section className="contact-order" id="order-form" aria-labelledby="order-form-title">
+    <div className="section-heading"><div><p className="eyebrow">ORDER FROM OUR NURSERY</p><h2 id="order-form-title">Place an Order</h2><p className="muted">Share what you need and we’ll open WhatsApp with your order details. The nursery will confirm availability, price and delivery.</p></div></div>
     <form className="order-form" onSubmit={submitOrder}>
       <label>Full name<input name="name" autoComplete="name" value={form.name} onChange={updateField} required/></label>
       <label>Phone number<input name="phone" type="tel" autoComplete="tel" value={form.phone} onChange={updateField} required/></label>
@@ -40,5 +40,5 @@ export default function OrderForm() {
       <label className="order-form-wide">Additional notes (optional)<textarea name="notes" rows="3" value={form.notes} onChange={updateField}/></label>
       <button className="button button-whatsapp order-form-submit" type="submit"><WhatsAppIcon size={18}/> Continue to WhatsApp <ArrowRight size={17}/></button>
     </form>
-  </main>
+  </section>
 }

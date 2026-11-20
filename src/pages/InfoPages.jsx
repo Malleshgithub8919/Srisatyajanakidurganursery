@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import { ChevronLeft, ChevronRight, X } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Phone, X } from 'lucide-react'
 import { business } from '../config/business'
-import { buildWhatsAppSupportUrl } from '../services/whatsappService'
+import { buildWhatsAppSupportUrl, getCallUrl } from '../services/whatsappService'
 import WhatsAppIcon from '../components/WhatsAppIcon'
+import PageBannerCarousel from '../components/PageBannerCarousel'
+import { nurseryPageBannerImages } from '../data/pageBannerImages'
+import OrderForm from './OrderForm'
+import Reviews from './Reviews'
 import '../contact.css'
 import '../about.css'
 const galleryPhotos = [
@@ -21,9 +25,17 @@ const galleryPhotos = [
   ['nursery-13.png', 'Ornamental shrubs'],
 ]
 
+const aboutBannerImages = [
+  { src: '/about-banner/nursery-about-1.jpg', alt: 'White flowers growing among green nursery plants', objectPosition: 'center 68%' },
+  { src: '/about-banner/nursery-about-2.jpg', alt: 'Colorful flowering shrubs across the nursery' },
+  { src: '/about-banner/nursery-about-3.jpg', alt: 'Rows of ornamental plants at the nursery' },
+  { src: '/about-banner/nursery-about-4.jpg', alt: 'Wide view of plants and nursery beds' },
+  { src: '/about-banner/nursery-about-5.jpg', alt: 'Green plants arranged across the nursery garden' },
+]
+
 export function About() {
   return <main className="page-wrap about-page">
-    <div className="page-title"><p className="eyebrow">ABOUT US</p><h1>{business.name}</h1><p className="about-tagline">Growing Greenery, Creating Beautiful Spaces.</p></div>
+    <PageBannerCarousel label="About Us nursery" eyebrow="ABOUT US" title={business.name} subtitle="Growing Greenery, Creating Beautiful Spaces." images={aboutBannerImages}/>
     <section className="about-intro">
       <div className="about-copy">
         <h2>Welcome to our nursery</h2>
@@ -103,8 +115,8 @@ export function Gallery(){
 
   const activePhoto = isPreviewOpen ? galleryPhotos[activePhotoIndex] : null
 
-  return <main className="page-wrap">
-    <div className="page-title"><p className="eyebrow">{business.name}</p><h1>Gallery</h1><p>A look at our nursery, plant collection and green spaces.</p></div>
+  return <main className="page-wrap page-banner-page">
+    <PageBannerCarousel label="Nursery gallery" eyebrow="INSIDE OUR NURSERY" title="Gallery" subtitle="A look at our nursery, plant collection and green spaces." images={nurseryPageBannerImages}/>
     <div className="gallery-grid">{galleryPhotos.map(([file,alt], index)=><figure className="gallery-item" key={file}>
       <button className="gallery-preview-button" type="button" onClick={() => setActivePhotoIndex(index)} aria-label={`View ${alt}`}>
         <img src={`/gallery/${file}`} alt={alt} loading="lazy"/>
@@ -128,13 +140,16 @@ export function Gallery(){
   </main>
 }
 export function Contact() {
-  return <main className="page-wrap">
-    <div className="page-title"><p className="eyebrow">WE'D LOVE TO HELP</p><h1>Contact Us</h1><p>Ask about plant varieties, wholesale quantities, current prices and delivery.</p></div>
+  return <main className="page-wrap page-banner-page">
+    <PageBannerCarousel label="Contact the nursery" eyebrow="WE'D LOVE TO HELP" title="Contact Us" subtitle="Ask about plant varieties, wholesale quantities, current prices and delivery." images={nurseryPageBannerImages}/>
     <div className="contact-content">
       <div className="contact-panel">
         <h2>{business.name}</h2><p>{business.teluguName}</p><p>{business.address}</p>
         <a className="text-link" href={business.directionsUrl} target="_blank" rel="noreferrer">Get directions</a>
-        <div className="hero-buttons"><a className="button button-whatsapp" href={buildWhatsAppSupportUrl()} target="_blank" rel="noreferrer"><WhatsAppIcon size={18}/> WhatsApp Nursery</a></div>
+        <div className="hero-buttons">
+          <a className="button" href={getCallUrl()}><Phone size={18}/> Call Nursery</a>
+          <a className="button button-whatsapp" href={buildWhatsAppSupportUrl()} target="_blank" rel="noreferrer"><WhatsAppIcon size={18}/> WhatsApp Nursery</a>
+        </div>
       </div>
       <section className="map-panel">
         <h2>Find us on Google Maps</h2>
@@ -142,5 +157,7 @@ export function Contact() {
         <a className="text-link" href={business.directionsUrl} target="_blank" rel="noreferrer">Open in Google Maps</a>
       </section>
     </div>
+    <OrderForm/>
+    <Reviews embedded/>
   </main>
 }

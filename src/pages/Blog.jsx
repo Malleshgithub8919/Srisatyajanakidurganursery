@@ -1,8 +1,10 @@
 import { useMemo, useState } from 'react'
 import { Search, X } from 'lucide-react'
 import BlogCard from '../components/BlogCard'
+import PageBannerCarousel from '../components/PageBannerCarousel'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import { blogCategories, blogs } from '../data/blogs'
+import { nurseryPageBannerImages } from '../data/pageBannerImages'
 import { buildWhatsAppSupportUrl } from '../services/whatsappService'
 import { usePageMetadata } from '../services/seo'
 import '../blog.css'
@@ -48,13 +50,8 @@ export default function Blog() {
     ? matchingBlogs
     : matchingBlogs.filter(blog => blog.slug !== featuredBlog?.slug)
 
-  return <main className="page-wrap blog-page">
-    <header className="page-title blog-page-title">
-      <p className="eyebrow">GROW YOUR KNOWLEDGE</p>
-      <h1>Gardening Blogs &amp; Tips</h1>
-      <p className="blog-page-subtitle">Learn, Grow and Make Your Garden Beautiful.</p>
-      <p>Helpful, practical ideas for choosing plants and caring for the green spaces around you.</p>
-    </header>
+  return <main className="page-wrap blog-page page-banner-page">
+    <PageBannerCarousel label="Gardening blog" eyebrow="GROW YOUR KNOWLEDGE" title="Gardening Blogs & Tips" subtitle="Learn, grow and make your garden beautiful with practical tips for your green spaces." images={nurseryPageBannerImages}/>
 
     {!hasFilters && featuredBlog && <section className="blog-featured-section" aria-labelledby="featured-blog-heading">
       <div className="blog-section-heading">

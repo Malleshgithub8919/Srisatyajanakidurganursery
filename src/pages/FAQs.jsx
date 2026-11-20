@@ -3,7 +3,9 @@ import { MapPin, Search } from 'lucide-react'
 import { business } from '../config/business'
 import { faqCategories, faqs } from '../data/faqs'
 import FAQAccordion from '../components/FAQAccordion'
+import PageBannerCarousel from '../components/PageBannerCarousel'
 import WhatsAppIcon from '../components/WhatsAppIcon'
+import { nurseryPageBannerImages } from '../data/pageBannerImages'
 import { buildWhatsAppSupportUrl } from '../services/whatsappService'
 import '../faq.css'
 
@@ -21,13 +23,8 @@ export default function FAQs() {
   })).filter(faqCategory => faqCategory.questions.length > 0), [category, normalizedQuery])
   const resultCount = visibleCategories.reduce((total, faqCategory) => total + faqCategory.questions.length, 0)
 
-  return <main className="page-wrap faq-page">
-    <header className="page-title">
-      <p className="eyebrow">HELP AND INFORMATION</p>
-      <h1>Frequently Asked Questions</h1>
-      <h2>Find Answers to Your Questions</h2>
-      <p>Find helpful information about our plants, ordering process, nursery services, delivery and plant care.</p>
-    </header>
+  return <main className="page-wrap faq-page page-banner-page">
+    <PageBannerCarousel label="Frequently asked questions" eyebrow="HELP AND INFORMATION" title="Frequently Asked Questions" subtitle="Helpful answers about our plants, orders, nursery services, delivery and plant care." images={nurseryPageBannerImages}/>
 
     <section className="faq-browser" aria-label="Search and browse frequently asked questions">
       <label className="search-box faq-search">

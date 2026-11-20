@@ -6,7 +6,5 @@ export const navigationLinks = [
   ['/gallery', 'Gallery'],
   ['/faqs', 'FAQs'],
   ['/blog', 'Blog'],
-  ['/reviews', 'Reviews'],
-  ['/order', 'Order'],
   ['/contact', 'Contact Us'],
 ]

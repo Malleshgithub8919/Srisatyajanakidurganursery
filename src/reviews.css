@@ -1,4 +1,6 @@
 .reviews-page .reviews-subtitle{font:600 22px 'Playfair Display',serif;color:#62825f;margin:0 0 12px}
+.contact-reviews{margin-top:50px}
+.contact-reviews .page-title>h2{font:600 36px 'Playfair Display',serif;color:#214b35;margin:14px 0}
 .reviews-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:24px;align-items:start;max-width:1180px;margin:0 auto}
 .reviews-list-panel,.review-form-panel{min-width:0;padding:28px;background:#f3f6ef;border:1px solid #e6ede3;border-radius:12px}
 .reviews-section-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
