@@ -8,7 +8,9 @@
 .gardening-hero-copy>p:not(.eyebrow){max-width:600px;color:#f4f6ed;line-height:1.75;font-size:16px;margin-bottom:22px;text-shadow:0 2px 9px #0005}
 .gardening-hero-copy .button{background:#f2c64f;color:#203d29;font-weight:800;box-shadow:0 8px 22px #0003}
 .gardening-hero-copy .button:hover{background:#ffdb78}
-.gardening-hero-image{position:absolute;z-index:-2;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.gardening-hero-slides{position:absolute;z-index:-2;inset:0}
+.gardening-hero-image{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:0;transition:opacity .7s ease}
+.gardening-hero-image.is-active{opacity:1}
 .gardening-section{margin:0 auto 68px}
 .gardening-section .section-heading{margin-bottom:24px}
 .gardening-section .section-heading h2{font:600 34px 'Playfair Display',serif;color:#214b35;margin:8px 0}
@@ -55,3 +57,4 @@
 @media(max-width:650px){.gardening-section{margin-bottom:48px}.gardening-section .section-heading h2{font-size:30px}.gardening-care-section,.gardening-gallery-section{padding:22px 16px}.gardening-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gardening-gallery-grid figure{height:170px}.gardening-enquiry{grid-template-columns:1fr;padding:24px 18px}.gardening-contact-actions{flex-direction:column}.gardening-contact-actions .button{width:100%}}
 @media(max-width:480px){.gardening-page{padding-top:42px}.gardening-hero{min-height:440px;margin:-42px -16px 42px;padding:42px 22px 58px;border-radius:0 0 22px 22px}.gardening-hero::before{background:linear-gradient(180deg,#0d2f1e9c 0%,#0d2f1ec9 58%,#0d2f1ef0 100%)}.gardening-hero-copy h1{font-size:44px}.gardening-hero-copy h2{font-size:21px}.gardening-hero-copy>p:not(.eyebrow){font-size:14px;line-height:1.65}.gardening-gallery-grid figure{height:145px}}
 @media(max-width:420px){.gardening-category-grid,.care-guide-grid,.gardening-tips-grid{grid-template-columns:1fr}.gardening-category-card>img,.gardening-tip-card>img{height:210px}.gardening-gallery-grid figure{height:145px}}
+@media(prefers-reduced-motion:reduce){.gardening-hero-image{transition:none}}

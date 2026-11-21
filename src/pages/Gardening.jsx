@@ -1,12 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
 import { gardeningCategories, gardeningGallery, gardeningTips, plantCareGuides } from '../data/gardening'
 import { buildWhatsAppGardeningUrl } from '../services/whatsappService'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import '../gardening.css'
 
+const gardeningBannerImages = [
+  { src: '/about-banner/nursery-about-7.jpg', alt: 'Colorful flowering beds and ornamental nursery trees' },
+  { src: '/about-banner/nursery-about-6.jpg', alt: 'Worker caring for flowering plants and shaped nursery trees' },
+  { src: '/gardening/gardening-banner-user.png', alt: 'Flowering plants arranged in rows at the nursery' },
+]
+
 export default function Gardening() {
   const [requirements, setRequirements] = useState('')
+  const [activeBanner, setActiveBanner] = useState(0)
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
+
+    const intervalId = window.setInterval(() => {
+      setActiveBanner(current => (current + 1) % gardeningBannerImages.length)
+    }, 1800)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
 
   function submitEnquiry(event) {
     event.preventDefault()
@@ -22,7 +39,15 @@ export default function Gardening() {
         <p>Explore gardening ideas, plant care tips and landscaping inspiration to make your home, office and outdoor spaces greener and more beautiful.</p>
         <a className="button" href="#gardening-categories">Explore Gardening Ideas <ArrowRight size={17}/></a>
       </div>
-      <img className="gardening-hero-image" src="/gardening/gardening-banner-user.png" alt="Flowering plants arranged in rows at the nursery"/>
+      <div className="gardening-hero-slides" aria-label="Gardening at the nursery">
+        {gardeningBannerImages.map((image, index) => <img
+          key={image.src}
+          className={`gardening-hero-image${index === activeBanner ? ' is-active' : ''}`}
+          src={image.src}
+          alt={image.alt}
+          aria-hidden={index !== activeBanner}
+        />)}
+      </div>
     </section>
 
     <section className="gardening-section" id="gardening-categories">

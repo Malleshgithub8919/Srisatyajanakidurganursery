@@ -35,15 +35,5 @@ export default function PageBannerCarousel({ label, eyebrow, title, subtitle, im
       <h1>{title}</h1>
       <p>{subtitle}</p>
     </div>
-    <div className="page-banner-carousel-indicators" aria-label="Choose a banner image">
-      {images.map((image, index) => <button
-        key={image.src}
-        type="button"
-        className={index === activeIndex ? 'is-active' : ''}
-        aria-label={`Show ${label} image ${index + 1}`}
-        aria-pressed={index === activeIndex}
-        onClick={() => setActiveIndex(index)}
-      />)}
-    </div>
   </section>
 }

@@ -5,11 +5,15 @@ import { categories } from '../data/categories'
 import { plants } from '../data/plants'
 import PlantCard from '../components/PlantCard'
 import WhatsAppIcon from '../components/WhatsAppIcon'
+import FAQAccordion from '../components/FAQAccordion'
 import { business } from '../config/business'
+import { faqs } from '../data/faqs'
 import { buildWhatsAppSupportUrl } from '../services/whatsappService'
 import '../about.css'
+import '../faq.css'
 
 const bannerImages = [
+  { src: '/banners/nursery-branded-entrance.png', alt: 'Sri Satyajanaki Durga Nursery Gardens branded entrance' },
   { src: '/banners/nursery-slide-2.jpg', alt: 'Sri Satyajanaki Durga Nursery Gardens with Ganapathi' },
   { src: '/banners/nursery-slide-1.jpg', alt: 'Flowering plants at the nursery' },
   { src: '/banners/nursery-slide-3.jpg', alt: 'Aerial view of the nursery gardens' },
@@ -21,6 +25,26 @@ const featuredPhotos = [
   { src: '/featured/chrysanthemums.jpg', alt: 'White and pink chrysanthemum flowers' },
   { src: '/featured/flowering-shrubs.jpg', alt: 'Colorful flowering shrubs at the nursery' },
   { src: '/featured/marigolds.jpg', alt: 'Orange and yellow marigold flowers' },
+]
+
+const galleryPreview = [
+  { src: '/gallery/nursery-award-recognition.png', alt: 'Recognition ceremony at the nursery' },
+  { src: '/gallery/nursery-philathropic-recognition.png', alt: 'Nursery recognition event' },
+  { src: '/gallery/national-excellence-award.png', alt: 'National excellence award' },
+]
+
+const homeNurseryPhotos = [
+  { src: '/gallery/portulacaria-groundcover.png', alt: 'Low-growing ornamental plant in a nursery pot' },
+  { src: '/gallery/ficus-root-planter.png', alt: 'Ornamental tree with exposed roots in a planter' },
+  { src: '/gallery/ficus-banyan-roots.png', alt: 'Ficus tree with exposed roots at the nursery' },
+  { src: '/gallery/potted-avocado-tree.png', alt: 'Potted fruit tree growing among nursery plants' },
+  { src: '/gallery/variegated-topiary-plant.png', alt: 'Variegated ornamental topiary tree' },
+  { src: '/gallery/pink-bougainvillea-nursery.png', alt: 'Pink flowering plants and topiary at the nursery' },
+]
+
+const landscapingPhotos = [
+  { src: '/gallery/landscaping-topiary-display.png', alt: 'Rows of shaped topiary trees and ornamental plants' },
+  { src: '/gallery/landscaping-flower-beds.png', alt: 'Colorful flower beds and topiary in the nursery garden' },
 ]
 
 export default function Home() {
@@ -112,6 +136,28 @@ export default function Home() {
       </div>
       <p className="about-closing home-reveal"><strong>{business.name} – Where Green Dreams Grow!</strong></p>
     </section>
+    <section className="section home-nursery-photos" aria-labelledby="home-nursery-photos-title">
+      <div className="section-heading home-reveal">
+        <div><p className="eyebrow">A GLIMPSE OF OUR NURSERY</p><h2 id="home-nursery-photos-title">Plants and greenery for every space</h2></div>
+        <Link to="/gallery" className="text-link">Explore the gallery <ArrowRight size={16}/></Link>
+      </div>
+      <div className="home-nursery-photo-grid">
+        {homeNurseryPhotos.map(photo => <Link className="home-reveal-item" to="/gallery" key={photo.src}>
+          <img src={photo.src} alt={photo.alt} loading="lazy"/>
+        </Link>)}
+      </div>
+    </section>
+    <section className="section section-soft home-landscaping-section" aria-labelledby="home-landscaping-title">
+      <div className="section-heading home-reveal">
+        <div><p className="eyebrow">GARDEN AND LANDSCAPE INSPIRATION</p><h2 id="home-landscaping-title">Landscaping</h2></div>
+        <Link to="/gardening" className="text-link">Explore gardening <ArrowRight size={16}/></Link>
+      </div>
+      <div className="home-landscaping-grid">
+        {landscapingPhotos.map(photo => <Link className="home-reveal-item" to="/gallery" key={photo.src}>
+          <img src={photo.src} alt={photo.alt} loading="lazy"/>
+        </Link>)}
+      </div>
+    </section>
     <section className="section">
       <div className="section-heading home-reveal"><div><p className="eyebrow">FIND YOUR PLANT</p><h2>Explore plant categories</h2></div><Link to="/plants" className="text-link">View all plants <ArrowRight size={16}/></Link></div>
       <div className="category-grid">{categories.slice(0,8).map((category,index)=><Link className="category-tile home-reveal-item" to={`/plants?category=${category.id}`} key={category.id}><span>0{index+1}</span><h3>{category.name}</h3><p>{category.description}</p></Link>)}</div>
@@ -122,6 +168,20 @@ export default function Home() {
         {featuredPhotos.map(photo => <img className="home-reveal-item" key={photo.src} src={photo.src} alt={photo.alt} loading="lazy"/>)}
       </div>
       <div className="plant-grid home-featured-card-grid">{plants.filter(plant => plant.id !== 'snake-plant').slice(0,2).map(plant=><PlantCard className="home-reveal-item" key={plant.id} plant={plant}/>)}</div>
+    </section>
+    <section className="section home-gallery-preview" aria-labelledby="home-gallery-title">
+      <div className="section-heading home-reveal">
+        <div><p className="eyebrow">OUR GALLERY</p><h2 id="home-gallery-title">See life at the nursery</h2></div>
+        <Link to="/gallery" className="text-link">View full gallery <ArrowRight size={16}/></Link>
+      </div>
+      <div className="home-gallery-grid">{galleryPreview.map(photo => <Link className="home-reveal-item" to="/gallery" key={photo.src}><img src={photo.src} alt={photo.alt} loading="lazy"/></Link>)}</div>
+    </section>
+    <section className="section section-soft home-faq-preview" aria-labelledby="home-faq-title">
+      <div className="section-heading home-reveal">
+        <div><p className="eyebrow">QUICK ANSWERS</p><h2 id="home-faq-title">Frequently asked questions</h2></div>
+        <Link to="/faqs" className="text-link">View all FAQs <ArrowRight size={16}/></Link>
+      </div>
+      <div className="faq-list home-faq-list">{faqs.slice(0, 5).map(faq => <FAQAccordion faq={faq} key={faq.id}/>)}</div>
     </section>
     <section className="cta home-reveal">
       <Leaf size={30}/><div><p className="eyebrow light">NEED HELP CHOOSING?</p><h2>Let's find the right plants for your space.</h2><p>Contact the nursery to check current varieties, prices and availability.</p></div>

@@ -45,6 +45,19 @@ html.site-motion-ready .site-reveal:not(.is-visible){opacity:0;transform:transla
 .footer .copyright{margin:6px 0 0;padding-top:18px;border-top:1px solid #ffffff30;color:#c5d6c9;font-size:12px;line-height:1.6}
 .search-box input{min-width:0;flex:1}
 .gallery-preview-button{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.home-gallery-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.home-gallery-grid a{display:block;height:260px;border-radius:10px;overflow:hidden;background:#edf2eb}
+.home-gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.home-gallery-grid a:hover img{transform:scale(1.03)}
+.home-nursery-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.home-nursery-photo-grid a{display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#edf2eb}
+.home-nursery-photo-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.home-nursery-photo-grid a:hover img{transform:scale(1.03)}
+.home-landscaping-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.home-landscaping-grid a{display:block;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#edf2eb}
+.home-landscaping-grid img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.home-landscaping-grid a:hover img{transform:scale(1.03)}
+.home-faq-list{max-width:980px;margin:0 auto}
 .gallery-lightbox{position:fixed;inset:0;z-index:30;display:grid;place-items:center;padding:24px;background:rgba(12,28,18,.94)}
 .gallery-lightbox-content{position:relative;display:grid;place-items:center;width:min(100%,1100px);min-height:min(80vh,800px)}
 .gallery-lightbox-figure{width:100%;margin:0;text-align:center}
@@ -93,6 +106,10 @@ html.site-motion-ready .site-reveal:not(.is-visible){opacity:0;transform:transla
   .detail-layout{grid-template-columns:minmax(0,1fr);gap:26px}
   .detail-image{max-height:420px}
   .gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-gallery-grid a{height:220px}
+  .home-nursery-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-landscaping-grid{grid-template-columns:minmax(0,1fr)}
   .footer{grid-template-columns:repeat(2,minmax(0,1fr))}
   .copyright{grid-column:1/-1}
   .map-panel iframe{width:100%;max-width:100%}

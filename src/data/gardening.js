@@ -104,6 +104,10 @@ export const gardeningTips = [
 ]
 
 export const gardeningGallery = [
+  { image: '/gardening/flowering-plant-beds.png', alt: 'Workers maintaining flowering plant beds and topiary plants' },
+  { image: '/gardening/indoor-ornamental-plants.png', alt: 'Indoor ornamental plants arranged at the nursery' },
+  { image: '/gardening/flowering-nursery-beds.png', alt: 'Colorful flowering nursery beds with topiary plants' },
+  { image: '/gardening/topiary-nursery-rows.png', alt: 'Rows of shaped topiary plants at Sri Satyajanaki Durga Nursery' },
   { image: '/gardening/potted-garden.png', alt: 'Potted plants arranged in rows at the nursery' },
   { image: '/gardening/nursery-seedlings.png', alt: 'Young nursery plants under shade netting' },
   { image: '/gardening/ornamental-shrubs.png', alt: 'Ornamental shrubs in the nursery garden' },

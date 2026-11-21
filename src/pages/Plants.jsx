@@ -13,6 +13,31 @@ const plantsBannerImages = [
   { src: '/about/nursery-beds.png', alt: 'Rows of ornamental plants in the nursery' },
 ]
 
+const nurseryPlantPhotos = [
+  { src: '/gallery/potted-avocado-tree.png', name: 'Potted fruit tree' },
+  { src: '/gallery/pink-bougainvillea-nursery.png', name: 'Pink bougainvillea' },
+  { src: '/gallery/nursery-topiary-rows.png', name: 'Rows of shaped topiary trees' },
+  { src: '/gallery/variegated-topiary-plant.png', name: 'Variegated ornamental plant' },
+  { src: '/gallery/topiary-tree-collection.png', name: 'Ornamental tree collection' },
+  { src: '/gallery/topiary-nursery-wide.png', name: 'Topiary trees across the nursery' },
+  { src: '/gallery/nursery-topiary-display.png', name: 'Topiary nursery display' },
+  { src: '/gallery/ornamental-topiary-garden.png', name: 'Ornamental topiary garden' },
+  { src: '/plants/ornamental-banyan-roots.png', name: 'Exposed-root ornamental tree' },
+  { src: '/plants/bougainvillea-red-topiary.png', name: 'Red bougainvillea' },
+  { src: '/plants/bougainvillea-magenta.png', name: 'Magenta bougainvillea' },
+  { src: '/plants/portulacaria-bonsai.png', name: 'Portulacaria bonsai' },
+  { src: '/plants/ficus-round-topiary.png', name: 'Round-canopy ornamental tree' },
+  { src: '/plants/ficus-root-topiary.png', name: 'Root-form ornamental tree' },
+  { src: '/plants/ornamental-bonsai.png', name: 'Ornamental bonsai' },
+  { src: '/plants/nursery-topiary-collection.png', name: 'Topiary collection at the nursery' },
+  { src: '/plants/round-canopy-topiary.png', name: 'Wide-canopy topiary tree' },
+  { src: '/plants/dragon-fruit-ripe.png', name: 'Dragon fruit growing on its plant' },
+  { src: '/plants/dragon-fruit-flower.png', name: 'Dragon fruit flower' },
+  { src: '/plants/shaped-topiary-tree.png', name: 'Shaped ornamental tree' },
+  { src: '/plants/variegated-topiary.png', name: 'Variegated ornamental tree' },
+  { src: '/plants/cone-shaped-topiary.png', name: 'Cone-shaped topiary' },
+]
+
 function PlantsBanner() {
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -81,5 +106,16 @@ export default function Plants() {
     {filtered.length
       ? <div className="plant-grid">{filtered.map(p=><PlantCard key={p.id} plant={p}/>)}</div>
       : <div className="empty-state"><h3>No plants found</h3><p>Try another name or category.</p><button className="button" onClick={()=>{setQuery('');setCategory('all')}}>Clear filters</button></div>}
+    <section className="nursery-plants-section" aria-labelledby="nursery-plants-title">
+      <div className="section-heading">
+        <div><p className="eyebrow">FROM OUR NURSERY</p><h2 id="nursery-plants-title">More Plants and Topiary</h2><p>Explore more plants and ornamental trees from our nursery. Please contact us to confirm current availability.</p></div>
+      </div>
+      <div className="nursery-plants-grid">
+        {nurseryPlantPhotos.map(photo => <figure key={photo.src}>
+          <img src={photo.src} alt={photo.name} loading="lazy"/>
+          <figcaption>{photo.name}</figcaption>
+        </figure>)}
+      </div>
+    </section>
   </main>
 }

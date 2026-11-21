@@ -10,6 +10,17 @@ import Reviews from './Reviews'
 import '../contact.css'
 import '../about.css'
 const galleryPhotos = [
+  ['potted-avocado-tree.png', 'Potted fruit tree with green fruit'],
+  ['pink-bougainvillea-nursery.png', 'Pink bougainvillea and shaped topiary at the nursery'],
+  ['nursery-topiary-rows.png', 'Rows of shaped topiary trees at the nursery'],
+  ['variegated-topiary-plant.png', 'Variegated ornamental plant at the nursery'],
+  ['topiary-tree-collection.png', 'Collection of shaped ornamental trees'],
+  ['topiary-nursery-wide.png', 'Wide view of topiary trees across the nursery'],
+  ['nursery-topiary-display.png', 'Topiary trees displayed at the nursery'],
+  ['ornamental-topiary-garden.png', 'Ornamental topiary garden at the nursery'],
+  ['nursery-award-recognition.png', 'Recognition ceremony at the nursery'],
+  ['nursery-philathropic-recognition.png', 'Philanthropic and nursery recognition ceremony'],
+  ['national-excellence-award.png', 'National excellence award presented to Sri G. Gothanala Vara Prasad'],
   ['nursery-1.png', 'Sri Satyajanaki Durga Nursery'],
   ['nursery-2.png', 'Plant collection at the nursery'],
   ['nursery-3.png', 'Nursery grounds'],
@@ -26,6 +37,8 @@ const galleryPhotos = [
 ]
 
 const aboutBannerImages = [
+  { src: '/about-banner/nursery-about-6.jpg', alt: 'Worker caring for flowering plants and shaped nursery trees' },
+  { src: '/about-banner/nursery-about-7.jpg', alt: 'Wide view of colorful flowering beds and ornamental nursery trees' },
   { src: '/about-banner/nursery-about-1.jpg', alt: 'White flowers growing among green nursery plants', objectPosition: 'center 68%' },
   { src: '/about-banner/nursery-about-2.jpg', alt: 'Colorful flowering shrubs across the nursery' },
   { src: '/about-banner/nursery-about-3.jpg', alt: 'Rows of ornamental plants at the nursery' },

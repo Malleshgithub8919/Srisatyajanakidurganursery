@@ -6,6 +6,14 @@
 .category-filters button:hover,.category-filters button.active{background:#285d3d;border-color:#285d3d;color:#fff}
 .category-filters button:focus-visible,.plant-card-actions a:focus-visible,.plant-card-actions input:focus-visible{outline:3px solid #c1d9a9;outline-offset:2px}
 .plants-page .plant-grid{align-items:stretch}
+.nursery-plants-section{margin:58px auto 0}
+.nursery-plants-section .section-heading{max-width:780px;margin:0 auto 24px;text-align:center}
+.nursery-plants-section .section-heading h2{margin:8px 0;color:#214b35;font:600 34px 'Playfair Display',serif}
+.nursery-plants-section .section-heading>div>p:last-child{color:#718075;font-size:13px;line-height:1.7}
+.nursery-plants-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.nursery-plants-grid figure{min-width:0;margin:0;overflow:hidden;border:1px solid #e7eee4;border-radius:10px;background:#fff}
+.nursery-plants-grid img{display:block;width:100%;height:280px;padding:8px;object-fit:contain;background:#f3f6ef}
+.nursery-plants-grid figcaption{padding:11px 12px;color:#49624e;font-size:12px;font-weight:600;line-height:1.5}
 .plant-card{display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
 .plant-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px #23442b15}
 .plant-card .plant-image{height:220px;flex-shrink:0;overflow:hidden}
@@ -22,7 +30,8 @@
 .plant-card-actions label{display:flex;align-items:center;gap:7px;font-size:12px;color:#53675a}
 .plant-card-actions input{width:62px;padding:8px;border:1px solid #dce5d9;border-radius:5px;color:#20362a}
 .plant-card-actions .button{padding:10px 12px}
-@media(max-width:650px){.category-filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 10px;margin-bottom:20px;scrollbar-width:thin}.category-filters button{flex:0 0 auto}.plant-card .plant-image{height:170px}.plant-card-actions{align-items:flex-start;flex-direction:column}.plant-card-actions .button{width:100%}.plant-description{min-height:0}}
+@media(max-width:768px){.nursery-plants-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.nursery-plants-grid img{height:250px}}
+@media(max-width:650px){.category-filters{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;padding:2px 2px 10px;margin-bottom:20px;scrollbar-width:thin}.category-filters button{flex:0 0 auto}.plant-card .plant-image{height:170px}.plant-card-actions{align-items:flex-start;flex-direction:column}.plant-card-actions .button{width:100%}.plant-description{min-height:0}.nursery-plants-section{margin-top:42px}.nursery-plants-section .section-heading h2{font-size:29px}.nursery-plants-grid{gap:10px}.nursery-plants-grid img{height:210px;padding:5px}}
 @media(max-width:390px){.plant-card .plant-image{height:210px}.plant-card-actions{align-items:center;flex-direction:row}.plant-card-actions .button{width:auto}}
 .plants-hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(420px,42vw,550px);margin:-75px -7% 55px;padding:58px 10%;overflow:hidden;border-radius:0 0 34px 34px;background:#193e2a}
 .plants-hero::before{position:absolute;z-index:-1;inset:0;content:'';background:linear-gradient(90deg,#0d2f1eeb 0%,#0d2f1eb8 45%,#0d2f1e24 100%),linear-gradient(0deg,#0d2f1e66,transparent 42%)}
